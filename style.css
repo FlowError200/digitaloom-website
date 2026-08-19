@@ -8,8 +8,8 @@
 }
 
 body {
-    background-color: #131b2e;              /* Pflichtkriterium: Hintergrundfarbe nach Wahl[cite: 2] */
-    background-image: url('bg.jpeg'); /* Das moderne Tech-Hintergrundbild */
+    background-color: #131b2e;              /* Pflichtkriterium: Hintergrundfarbe nach Wahl */
+    background-image: url('bg.jpeg');       /* Das moderne Tech-Hintergrundbild */
     background-repeat: no-repeat;           /* Verhindert Kachelung */
     background-size: cover;                 /* Bild füllt den Bildschirm vollflächig aus */
     background-attachment: fixed;           /* Bild bleibt beim Scrollen an Ort und Stelle */
@@ -21,19 +21,19 @@ body {
 }
 
 /* ==========================================================================
-   2. HAUPTLAYOUT (Pflichtkriterien für 35 Punkte)[cite: 2]
+   2. HAUPTLAYOUT 
    ========================================================================== */
 #wrapper {
-    width: 95%;                             /* Exakt gefordert: Flexible 95% Breite[cite: 2] */
-    max-width: 50rem;                       /* Exakt gefordert: Maximal 50rem Breite[cite: 2] */
-    margin: 0 auto;                         /* Zentriert den gesamten Inhaltsbereich mittig im body[cite: 2] */
+    width: 95%;                                   /* Exakt gefordert: Flexible 95% Breite */
+    max-width: 50rem;                             /* Exakt gefordert: Maximal 50rem Breite */
+    margin: 0 auto;                               /* Zentriert den gesamten Inhaltsbereich mittig im body */
     background-color: #dde9f5;           
-    padding: 1.5rem 2rem;                   /* Innenabstand für angenehme Textplatzierung */
-    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.3); /* Sanfter Schattenwurf auf den Hintergrund */
+    padding: 1.5rem 2rem;                         /* Innenabstand für angenehme Textplatzierung */
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.3);  /* Sanfter Schattenwurf auf den Hintergrund */
 }
 
 /* ==========================================================================
-   3. HEADER-BANNER (Vollflächig im Inhaltsbereich)
+   3. HEADER-BANNER
    ========================================================================== */
 .logo-container {
     width: 100%;                            /* Nutzt die volle verfügbare Inhaltsbreite */
@@ -50,36 +50,49 @@ body {
 }
 
 /* ==========================================================================
-   4. FLEXBOX-NAVIGATION (Exakt laut Aufgabenkriterien MMDE31-XX01)[cite: 2]
+   Logo-Verlinkung & Klickbereich
+   ========================================================================== */
+.logo-container a {
+    display: inline-block; /* Spannt den anklickbaren Link-Bereich exakt um das Logo */
+    cursor: pointer;       /* Zeigt das Zeiger-Hand-Symbol beim Darüberfahren an */
+    text-decoration: none; /* Entfernt unerwünschte Unterstreichungen */
+}
+
+.logo-container a img {
+    display: block;        /* Verhindert unerwünschte Abstände unter dem Bild */
+}
+
+/* ==========================================================================
+   4. FLEXBOX-NAVIGATION 
    ========================================================================== */
 nav ul {
-    display: flex;                          /* Flexcontainer laut Aufgabe[cite: 2] */
-    flex-wrap: wrap;                        /* Lässt Menüpunkte bei kleinen Displays umbrechen[cite: 2] */
-    justify-content: space-around;          /* Exakt gefordert: space-around für Abstände[cite: 2] */
-    margin: 0;                              /* Vorgabe: Alle Außenabstände zwingend auf null[cite: 2] */
-    padding: 0.5rem;                        /* Sinnvoller Innenabstand für die Leiste[cite: 2] */
-    background-color: #0c1938;              /* Farbklima: Sattes Navy-Blau[cite: 2] */
+    display: flex;                          /* Flexcontainer laut Aufgabe */
+    flex-wrap: wrap;                        /* Lässt Menüpunkte bei kleinen Displays umbrechen */
+    justify-content: space-around;          /* Exakt gefordert: space-around für Abstände */
+    margin: 0;                              /* Vorgabe: Alle Außenabstände zwingend auf null */
+    padding: 0.5rem;                        /* Sinnvoller Innenabstand für die Leiste */
+    background-color: #0c1938;              /* Farbklima: Sattes Navy-Blau */
     list-style: none;                       /* Entfernt Standard-Listenpunkte */
 }
 
 nav ul li {
-    list-style-type: none;                  /* Vorgabe: Keine Aufzählpunkte[cite: 2] */
-    flex: 0 0 auto;                         /* Vorgabe: flex: 0 0 auto;[cite: 2] */
+    list-style-type: none;                  /* Vorgabe: Keine Aufzählpunkte */
+    flex: 0 0 auto;                         /* Vorgabe: flex: 0 0 auto; */
 }
 
 nav ul a {
-    display: block;                         /* Macht den Link zum klickbaren Kasten[cite: 2] */
-    padding: 0.5rem 1.2rem;                 /* Innenabstand für die Schaltfläche[cite: 2] */
-    background-color: #1e2d4a;              /* Eigene Hintergrundfarbe für die Link-Kacheln[cite: 2] */
+    display: block;                         /* Macht den Link zum klickbaren Kasten */
+    padding: 0.5rem 1.2rem;                 /* Innenabstand für die Schaltfläche */
+    background-color: #1e2d4a;              /* Eigene Hintergrundfarbe für die Link-Kacheln */
     color: #f0f4f8;                         /* Helle Schrift für optimalen Kontrast */
     text-decoration: none;                  /* Entfernt den typischen Unterstrich */
     font-weight: 600;                       /* Halbfette Schrift */
-    transition: background-color 0.2s ease; /* Weicher Übergang beim Hovern[cite: 2] */
+    transition: background-color 0.2s ease; /* Weicher Übergang beim Hovern */
 }
 
 nav ul a:hover,
 nav ul a.active {
-    background-color: #00b4d8;              /* Geforderter Hover-Effekt: Cyan-Blau[cite: 2] */
+    background-color: #00b4d8;              /* Geforderter Hover-Effekt: Cyan-Blau */
     color: #0c1938;                         /* Dunkle Schriftfarbe bei Hover/aktiver Seite */
 }
 
@@ -131,7 +144,7 @@ p {
 }
 
 .more-link {
-    color: #0077b6;                         /* Akzent-Blau für 'mehr...'-Links */
+    color: #0077b6;                         /* Akzent-Blau für 'mehr...' */
     text-decoration: underline;             /* Unterstrichen zur Erkennbarkeit */
     font-weight: 600;                       /* Halbfett */
 }
@@ -157,7 +170,7 @@ p {
     box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Minimaler, weicher Bildschatten */
 }
 
-/* Call-to-Action Button Bereich (Mit viel Luft) */
+/* Call-to-Action Button Bereich */
 .cta-area {
     clear: both;                            /* Hebt das Float zwingend auf */
     margin-top: 2.2rem;                     /* Großzügiger Abstand nach oben zum Bild */
@@ -247,7 +260,7 @@ p {
 }
 
 /* ==========================================================================
-   7. ÜBER-MICH-SEITE (Float- und Aside-Kriterien)[cite: 2]
+   7. ÜBER-MICH-SEITE
    ========================================================================== */
 .about-content {
     margin-top: 1.2rem;                     /* Abstand nach oben */
@@ -265,7 +278,7 @@ p {
 }
 
 .highlight-box {
-    clear: both;                            /* Pflichtkriterium: Hebt Float auf, aside beginnt unter dem Bild[cite: 2] */
+    clear: both;                            /* Pflichtkriterium: Hebt Float auf, aside beginnt unter dem Bild */
     margin-top: 2rem;                       /* Abstand nach oben */
     padding: 1.2rem;                        /* Innenabstand */
     background-color: #e2e8f0;              /* Graublauer Hintergrund */
