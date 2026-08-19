@@ -1,0 +1,345 @@
+/* ==========================================================================
+   1. RESET & BASIS
+   ========================================================================== */
+* {
+    box-sizing: border-box;                 /* Verhindert, dass Padding und Border Boxbreiten aufblähen */
+    margin: 0;                              /* Entfernt alle Standard-Außenabstände */
+    padding: 0;                             /* Entfernt alle Standard-Innenabstände */
+}
+
+body {
+    background-color: #131b2e;              /* Pflichtkriterium: Hintergrundfarbe nach Wahl[cite: 2] */
+    background-image: url('bg.jpeg'); /* Das moderne Tech-Hintergrundbild */
+    background-repeat: no-repeat;           /* Verhindert Kachelung */
+    background-size: cover;                 /* Bild füllt den Bildschirm vollflächig aus */
+    background-attachment: fixed;           /* Bild bleibt beim Scrollen an Ort und Stelle */
+    background-position: center center;     /* Bild wird exakt mittig ausgerichtet */
+    font-family: 'Segoe UI', sans-serif;    /* Gut lesbare Standard-Schriftart */
+    color: #1a2436;                         /* Dunkles Anthrazit-Blau für hohe Lesbarkeit */
+    line-height: 1.6;                       /* Angenehmer Zeilenabstand */
+    padding: 2rem 0;                        /* Oben und unten Abstand zum Bildschirmrand */
+}
+
+/* ==========================================================================
+   2. HAUPTLAYOUT (Pflichtkriterien für 35 Punkte)[cite: 2]
+   ========================================================================== */
+#wrapper {
+    width: 95%;                             /* Exakt gefordert: Flexible 95% Breite[cite: 2] */
+    max-width: 50rem;                       /* Exakt gefordert: Maximal 50rem Breite[cite: 2] */
+    margin: 0 auto;                         /* Zentriert den gesamten Inhaltsbereich mittig im body[cite: 2] */
+    background-color: #dde9f5;           
+    padding: 1.5rem 2rem;                   /* Innenabstand für angenehme Textplatzierung */
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.3); /* Sanfter Schattenwurf auf den Hintergrund */
+}
+
+/* ==========================================================================
+   3. HEADER-BANNER (Vollflächig im Inhaltsbereich)
+   ========================================================================== */
+.logo-container {
+    width: 100%;                            /* Nutzt die volle verfügbare Inhaltsbreite */
+    margin-bottom: 1.2rem;                  /* Abstand nach unten zur Navigationsleiste */
+    text-align: center;                     /* Zentriert das Banner zur Sicherheit */
+}
+
+.site-logo {
+    width: 100%;                            /* Füllt die gesamte Inhaltsbreite exakt aus */
+    max-width: 100%;                        /* Verhindert jedes Überstehen */
+    height: auto;                           /* Erhält das originale Seitenverhältnis */
+    display: block;                         /* Entfernt den kleinen Standard-Spalt unter Bildern */
+    border-radius: 4px;                     /* Leichte Kantenabrundung passend zum Gesamtdesign */
+}
+
+/* ==========================================================================
+   4. FLEXBOX-NAVIGATION (Exakt laut Aufgabenkriterien MMDE31-XX01)[cite: 2]
+   ========================================================================== */
+nav ul {
+    display: flex;                          /* Flexcontainer laut Aufgabe[cite: 2] */
+    flex-wrap: wrap;                        /* Lässt Menüpunkte bei kleinen Displays umbrechen[cite: 2] */
+    justify-content: space-around;          /* Exakt gefordert: space-around für Abstände[cite: 2] */
+    margin: 0;                              /* Vorgabe: Alle Außenabstände zwingend auf null[cite: 2] */
+    padding: 0.5rem;                        /* Sinnvoller Innenabstand für die Leiste[cite: 2] */
+    background-color: #0c1938;              /* Farbklima: Sattes Navy-Blau[cite: 2] */
+    list-style: none;                       /* Entfernt Standard-Listenpunkte */
+}
+
+nav ul li {
+    list-style-type: none;                  /* Vorgabe: Keine Aufzählpunkte[cite: 2] */
+    flex: 0 0 auto;                         /* Vorgabe: flex: 0 0 auto;[cite: 2] */
+}
+
+nav ul a {
+    display: block;                         /* Macht den Link zum klickbaren Kasten[cite: 2] */
+    padding: 0.5rem 1.2rem;                 /* Innenabstand für die Schaltfläche[cite: 2] */
+    background-color: #1e2d4a;              /* Eigene Hintergrundfarbe für die Link-Kacheln[cite: 2] */
+    color: #f0f4f8;                         /* Helle Schrift für optimalen Kontrast */
+    text-decoration: none;                  /* Entfernt den typischen Unterstrich */
+    font-weight: 600;                       /* Halbfette Schrift */
+    transition: background-color 0.2s ease; /* Weicher Übergang beim Hovern[cite: 2] */
+}
+
+nav ul a:hover,
+nav ul a.active {
+    background-color: #00b4d8;              /* Geforderter Hover-Effekt: Cyan-Blau[cite: 2] */
+    color: #0c1938;                         /* Dunkle Schriftfarbe bei Hover/aktiver Seite */
+}
+
+/* ==========================================================================
+   5. INHALTSBEREICH & TYPOGRAFIE
+   ========================================================================== */
+main {
+    margin-top: 2rem;                       /* Abstand zwischen Navigation und Hauptinhalt */
+}
+
+.sub-claim {
+    font-size: 0.85rem;                     /* Dezenter Vorkopf-Text */
+    color: #0077b6;                         /* Mittleres Akzentblau */
+    font-weight: 700;                       /* Fette Schrift für klare Lesbarkeit */
+    text-transform: uppercase;              /* Großbuchstaben für Agentur-Look */
+    letter-spacing: 2px;                    /* Leicht gespreizte Buchstaben */
+    margin-bottom: 0.2rem;                  /* Kleiner Abstand direkt vor die h1 */
+}
+
+h1 {
+    font-size: 2.2rem;                      /* Deutlich präsenter und größer */
+    color: #0c1938;                         /* Sattes Navy-Blau */
+    margin-bottom: 1.2rem;                  /* Schafft Raum nach unten zum Bild/Text */
+    letter-spacing: -0.5px;                 /* Modernes, kompaktes Schriftbild */
+    border-bottom: 2px solid #cbd5e1;       /* Zarte, dezente Unterstrich-Linie */
+    padding-bottom: 0.4rem;                 /* Innenabstand zur Trennlinie */
+}
+
+.accent-amp {
+    color: #00b4d8;                         /* Das Kaufmanns-Und '&' leuchtet im DigitaLoom-Cyan */
+    font-weight: 300;                       /* Etwas feiner gezeichnet als eleganter Kontrast */
+}
+
+h2 {
+    font-size: 1.25rem;                     /* Zwischenüberschriften */
+    color: #0c1938;                         /* Sattes Navy-Blau */
+    margin-top: 1.2rem;                     /* Abstand nach oben */
+    margin-bottom: 0.6rem;                  /* Abstand nach unten */
+}
+
+p {
+    margin-bottom: 1rem;                    /* Standard-Absatzabstand */
+}
+
+.lead-text {
+    font-size: 1.05rem;                     /* Harmonische Fließtextgröße */
+    color: #334155;                         /* Gut lesbares Schiefer-Anthrazit */
+    line-height: 1.7;                       /* Etwas luftigerer Zeilenabstand */
+}
+
+.more-link {
+    color: #0077b6;                         /* Akzent-Blau für 'mehr...'-Links */
+    text-decoration: underline;             /* Unterstrichen zur Erkennbarkeit */
+    font-weight: 600;                       /* Halbfett */
+}
+
+.more-link:hover {
+    color: #00b4d8;                         /* Wechselt zu Cyan beim Hovern */
+}
+
+/* Startseite: Bild links & Text fließt rechts */
+.intro-block {
+    margin-top: 1.2rem;                     /* Abstand nach oben zur Linie */
+    margin-bottom: 1.5rem;                  /* Abstand nach unten */
+}
+
+.home-hero-image {
+    float: left;                            /* Bild steht links, Text fließt rechts daneben */
+    width: 230px;                           /* Angenehme Bildbreite */
+    height: auto;                           /* Erhält das Seitenverhältnis */
+    margin-right: 1.5rem;                   /* 1.5rem Abstand nach rechts zum Text */
+    margin-bottom: 1.2rem;                  /* 1.2rem Abstand nach unten */
+    border-radius: 6px;                     /* Abgerundete Ecken */
+    border: 1px solid #cbd5e1;              /* Feiner Rahmen */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Minimaler, weicher Bildschatten */
+}
+
+/* Call-to-Action Button Bereich (Mit viel Luft) */
+.cta-area {
+    clear: both;                            /* Hebt das Float zwingend auf */
+    margin-top: 2.2rem;                     /* Großzügiger Abstand nach oben zum Bild */
+    margin-bottom: 2.5rem;                  /* Ausreichend Abstand nach unten zu den Boxen */
+    text-align: center;                     /* Zentriert den Button */
+}
+
+.cta-btn {
+    display: inline-block;                  /* Button-Formatierung */
+    padding: 0.7rem 1.8rem;                 /* Bequeme Klickfläche */
+    background-color: #00b4d8;              /* Cyan-Hauptfarbe */
+    color: #0c1938;                         /* Dunkle Schrift für starken Kontrast */
+    text-decoration: none;                  /* Kein Unterstrich */
+    font-weight: bold;                      /* Fette Schrift */
+    border-radius: 4px;                     /* Passend zu den Boxen eckig mit leichten Rundungen */
+    box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3); /* Leichter Cyan-Glow unter dem Button */
+    transition: all 0.2s ease;              /* Weicher Hover-Übergang */
+}
+
+.cta-btn:hover {
+    background-color: #0077b6;              /* Dunkleres Blau beim Drüberfahren */
+    color: #ffffff;                         /* Weiße Schrift */
+    box-shadow: 0 4px 14px rgba(0, 119, 182, 0.4); /* Kräftigerer Schatten beim Hover */
+}
+
+/* ==========================================================================
+   6. BOXEN & KACHELN 
+   ========================================================================== */
+.teaser-container {
+    display: flex;                          /* Flexbox: Stellt beide Boxen nebeneinander */
+    gap: 1.5rem;                            /* 1.5rem Abstand zwischen den Boxen */
+    margin: 2rem 0;                         /* Abstand nach oben und unten */
+    flex-wrap: wrap;                        /* Bricht auf Smartphones sauber untereinander um */
+}
+
+.teaser-card {
+    flex: 1 1 200px;                        /* Boxen teilen sich den Platz gleichmäßig auf */
+    background-color: #e2e8f0;              /* Graublauer Hintergrund wie bei Versprechen-Box */
+    padding: 1.2rem;                        /* Innenabstand für den Text */
+    border-radius: 4px;                     /* Sanfte Eckenabrundung */
+    border-left: 4px solid #00b4d8;         /* Markanter Cyan-Akzentstreifen links */
+    display: flex;                          /* Flexbox intern */
+    flex-direction: column;                 /* Ordnet Inhalt und Link sauber untereinander an */
+}
+
+.teaser-card h2 {
+    font-size: 1.15rem;                     /* Kompakte Überschrift für die Box */
+    color: #0c1938;                         /* Sattes Navy-Blau */
+    margin-top: 0;                          /* Kein oberer Rand */
+    margin-bottom: 0.8rem;                  /* Abstand nach unten zur Liste */
+}
+
+.teaser-card ul {
+    margin-left: 1.2rem;                    /* Listen-Einrückung */
+    margin-bottom: 1rem;                    /* Abstand vor dem Link */
+    flex-grow: 1;                           /* Hält den 'mehr...'-Link am unteren Rand */
+}
+
+.teaser-card li {
+    margin-bottom: 0.3rem;                  /* Kleiner Abstand zwischen den Stichpunkten */
+}
+
+.card-footer {
+    text-align: right;                      /* Schiebt das 'mehr...' nach rechts */
+    margin-top: 0.5rem;                     /* Kleiner Abstand zur Liste */
+}
+
+.promise-section {
+    margin-top: 1.5rem;                     /* Abstand nach oben */
+    padding: 1.2rem;                        /* Innenabstand */
+    background-color: #e2e8f0;              /* Graublau */
+    border-radius: 4px;                     /* Kantenrundung */
+    border-left: 4px solid #00b4d8;         /* Cyan-Akzentlinie links */
+}
+
+.promise-section h2 {
+    margin-top: 0;                          /* Kein oberer Abstand */
+    margin-bottom: 0.6rem;                  /* Abstand zur Liste */
+}
+
+.promise-section ul {
+    margin-left: 1.5rem;                    /* Listen-Einrückung */
+}
+
+.promise-section li {
+    margin-bottom: 0.4rem;                  /* Abstand zwischen Punkten */
+}
+
+/* ==========================================================================
+   7. ÜBER-MICH-SEITE (Float- und Aside-Kriterien)[cite: 2]
+   ========================================================================== */
+.about-content {
+    margin-top: 1.2rem;                     /* Abstand nach oben */
+}
+
+.profile-image {
+    float: left;                            /* Pflichtkriterium: Bild wird rechts umflossen */
+    width: 330px;                           /* <--- HIER: auf 330px erhöht */
+    height: auto;                           /* Behält das originale Seitenverhältnis bei */
+    margin-right: 1.5rem;                   /* Abstand nach rechts zum Text */
+    margin-bottom: 1rem;                    /* Abstand nach unten zum nächsten Absatz */
+    border-radius: 6px;                     /* Schöne, abgerundete Ecken */
+    border: 1px solid #cbd5e1;              /* Feiner Rahmen */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Leichter, weicher Schatten */
+}
+
+.highlight-box {
+    clear: both;                            /* Pflichtkriterium: Hebt Float auf, aside beginnt unter dem Bild[cite: 2] */
+    margin-top: 2rem;                       /* Abstand nach oben */
+    padding: 1.2rem;                        /* Innenabstand */
+    background-color: #e2e8f0;              /* Graublauer Hintergrund */
+    border-left: 4px solid #00b4d8;         /* Cyan-Akzentlinie links */
+    border-radius: 0 4px 4px 0;             /* Rundet die rechten Ecken ab */
+}
+
+.highlight-box h2 {
+    margin-top: 0;                          /* Kein oberer Abstand */
+    margin-bottom: 0.5rem;                  /* Abstand zum Text */
+    font-size: 1.2rem;                      /* Kompakte Überschrift */
+    color: #0c1938;                         /* Sattes Navy-Blau */
+}
+
+.highlight-box p {
+    margin-bottom: 0;                       /* Kein überflüssiger Abstand unten */
+    font-size: 0.95rem;                     /* Dezente Schriftgröße */
+    color: #334155;                         /* Schiefergrau */
+}
+
+/* ==========================================================================
+   Kontaktformular
+   ========================================================================== */
+.form-container {
+    background-color: #e2e8f0;              /* Graublauer Hintergrund passend zu den Kacheln */
+    padding: 1.5rem 2rem;                   /* Innenabstand */
+    border-radius: 6px;                     /* Kanten abrunden */
+    border-left: 4px solid #00b4d8;         /* Cyan-Akzentstreifen */
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 1.2rem;                  /* Abstand zwischen Feldern */
+}
+
+.form-group label {
+    display: block;                         /* Label über dem Feld */
+    font-weight: 600;
+    color: #0c1938;                         /* Sattes Navy */
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;                            /* Volle Kastenbreite */
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    color: #1a2436;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #00b4d8;                  /* Cyan-Rahmen bei Fokus */
+    box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.2);
+}
+
+/* ==========================================================================
+   8. FOOTER
+   ========================================================================== */
+footer {
+    margin-top: 2.5rem;                     /* Abstand zum Inhalt */
+    padding-top: 1rem;                      /* Innenabstand */
+    border-top: 1px solid #cbd5e1;          /* Hellgraue Trennlinie */
+    text-align: center;                     /* Zentrierter Text */
+    font-size: 0.85rem;                     /* Kompakte Schriftgröße */
+    color: #64748b;                         /* Unaufdringliches Grau */
+}
